@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapsActivity">
+
+    <fragment
+        android:id="@+id/Map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/currentLocationEdit"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/currentLocationEdit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/edittext_bg"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/bottomLinearLayout">
+
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="60dp"-->
+        <!--            android:layout_margin="@dimen/dp_15"-->
+        <!--            app:cardCornerRadius="20dp">-->
+
+        <!--            <ImageView-->
+        <!--                android:layout_width="15sp"-->
+        <!--                android:layout_height="15sp"-->
+        <!--                android:layout_gravity="center_vertical"-->
+        <!--                android:layout_margin="@dimen/dp_12"-->
+        <!--                android:src="@drawable/green_circle" />-->
+
+        <!--            <androidx.appcompat.widget.SearchView-->
+        <!--                android:id="@+id/idSearchView"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="35dp"-->
+        <!--                android:layout_marginStart="30dp"-->
+        <!--                android:layout_marginTop="15dp"-->
+        <!--                android:layout_marginEnd="10dp"-->
+        <!--                android:layout_marginBottom="10dp"-->
+        <!--                android:background="#F6F4F4"-->
+        <!--                android:elevation="5dp"-->
+        <!--                app:iconifiedByDefault="false"-->
+        <!--                app:queryHint="CurrentLocation" />-->
+
+        <!--        </androidx.cardview.widget.CardView>-->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="15dp"
+            app:cardCornerRadius="20dp">
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="12dp"
+                android:src="@drawable/red_circle" />
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/idSearchView1"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edittext_bg"
+                app:iconifiedByDefault="false"
+                app:queryHint="Search Drop Location"/>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottomLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#2f3238"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/bottomImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bike1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="ride"
+            android:textColor="#FFF8CE52"
+            android:textSize="13sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
